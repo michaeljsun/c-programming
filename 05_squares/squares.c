@@ -42,8 +42,8 @@ int isInRange(int coord, int offset, int size) {
     void squares(int size1, int x_offset, int y_offset, int size2) {
       int w = max (size1, (x_offset + size2));//compute the max of size1 and (x_offset + size2).  Call this w
       int h = max (size1, (y_offset + size2));//compute the max of size1 and (y_offset + size2).  Call this h
-      for (int y = 0; y < (h + 1); y++) {//count from 0 to h. Call the number you count with y
-	for (int x = 0; x < (w + 1); x++) {//count from 0 to w. Call the number you count with x
+      for (int y = 0; y < h; y++) {//count from 0 to h. Call the number you count with y
+	for (int x = 0; x < w; x++) {//count from 0 to w. Call the number you count with x
 	  if (((x >= x_offset && x < (x_offset + size2)) && (y == y_offset || y == (y_offset + size2 - 1))) || ((y >= y_offset && y < (y_offset + size2)) && (x == x_offset || x == (x_offset + size2 -1)))) {
 	    printf("*");
 	  }
@@ -69,5 +69,5 @@ int isInRange(int coord, int offset, int size) {
 	}
 	printf("\n");
       }//when you finish counting x from 0 to w,
-       //print a newline
+      //print a newline
     }
